@@ -1,10 +1,12 @@
 import { ProxyState } from "../AppState.js";
 
 export default class Pokemon {
-    constructor(data) {
+    constructor({ name, height, weight, img, type }) {
         this.name = data.name,
             this.height = data.height,
-            this.weight = data.weight
+            this.weight = data.weight,
+            this.img = img,
+            this.type = type
     }
 
     get Template() {
