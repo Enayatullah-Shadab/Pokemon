@@ -12,8 +12,17 @@ export default class Pokemon {
 
     get Template() {
         return `
-    
+        <div class="bg-light m-3 p-3 shadow">
+    <div>
+        <h4>Name:${this.name}</h4>
+        <p>Height: ${this.height}</p>
+        <p>Wieght: ${this.weight}</p>
+        <p>img: ${this.img}</p>
+        <p>type: ${this.type}</p>
+    </div>
+    <div class="text-right">
+       ${this.Button}
+    </div>
     `
     }
-
 }
