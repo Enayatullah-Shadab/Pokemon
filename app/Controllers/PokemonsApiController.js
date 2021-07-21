@@ -15,6 +15,5 @@ export default class PokemonsApiController {
         } catch (error) {
             console.error('There was an Issue getting pokemonApi')
         }
-
     }
 }

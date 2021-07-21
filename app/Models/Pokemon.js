@@ -7,6 +7,7 @@ export default class Pokemon {
             this.weight = data.weight,
             this.img = img,
             this.type = type
+        this.isApiPokemon = forms != undefined
     }
 
     get Template() {
