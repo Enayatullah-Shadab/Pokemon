@@ -3,16 +3,16 @@ import { pokemonsApiService } from "../Services/PokemonsApiService.js";
 
 
 function _drawAll() {
-    const spells = ProxyState.allPokemonsApi
+    const pokemon = ProxyState.pokemon
     let template = ''
-    pokemons.forEach(s => template += `<li class="action" onclick="app.dndApiSpellsController.getPokemon('')">${p.name}</li>`)
+    pokemon.forEach(p => template += `<li class="action" onclick="app.pokemonApiController.getPokemon('')">${p.name}</li>`)
     document.getElementById('api-pokemon').innerHTML = template
 }
 
 export default class PokemonsApiController {
     constructor() {
         console.log("pokemon api controller working")
-        // ProxyState.on('pokemonsApi', _drawPokemon)
+        ProxyState.on('pokemon', _drawAll)
         this.getAllPokemon()
     }
 
@@ -20,7 +20,7 @@ export default class PokemonsApiController {
         try {
             await pokemonsApiService.getAllPokemon();
         } catch (error) {
-            console.error('There was an Issue getting pokemonApi')
+            console.error(error)
         }
     }
 }
